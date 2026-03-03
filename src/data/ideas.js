@@ -1,0 +1,157 @@
+// Mock improvement ideas data
+export const ideas = [
+    {
+        id: 1,
+        title: "Kitchen Modernization",
+        description:
+            "Upgrade cabinets, countertops, and appliances for a fresh, functional kitchen.",
+        costRange: "₹1L – ₹3L",
+        valueIncrease: "5–8%",
+        category: "Interior",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "medium",
+        icon: "🍳",
+    },
+    {
+        id: 2,
+        title: "Bathroom Upgrade",
+        description:
+            "Replace fixtures, add premium tiles, and improve lighting for a spa-like feel.",
+        costRange: "₹50K – ₹1.5L",
+        valueIncrease: "3–6%",
+        category: "Interior",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "low",
+        icon: "🚿",
+    },
+    {
+        id: 3,
+        title: "Solar Panel Installation",
+        description:
+            "Reduce electricity bills and add green energy credentials to your home.",
+        costRange: "₹2L – ₹5L",
+        valueIncrease: "4–7%",
+        category: "Energy",
+        tags: ["Independent House"],
+        budgetTier: "high",
+        icon: "☀️",
+    },
+    {
+        id: 4,
+        title: "Smart Home Lighting",
+        description:
+            "Install smart LED systems, automated switches, and motion sensors.",
+        costRange: "₹30K – ₹80K",
+        valueIncrease: "2–4%",
+        category: "Technology",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "low",
+        icon: "💡",
+    },
+    {
+        id: 5,
+        title: "Exterior Painting & Facade",
+        description:
+            "Fresh exterior paint and facade improvements dramatically boost curb appeal.",
+        costRange: "₹40K – ₹1.2L",
+        valueIncrease: "3–5%",
+        category: "Exterior",
+        tags: ["Independent House"],
+        budgetTier: "low",
+        icon: "🎨",
+    },
+    {
+        id: 6,
+        title: "Modular Storage Solutions",
+        description:
+            "Custom modular wardrobes, loft storage, and under-stair cabinets.",
+        costRange: "₹50K – ₹1.5L",
+        valueIncrease: "2–4%",
+        category: "Interior",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "low",
+        icon: "📦",
+    },
+    {
+        id: 7,
+        title: "Landscaping & Garden",
+        description:
+            "Create a beautiful garden, add plants, pathways, and outdoor lighting.",
+        costRange: "₹80K – ₹2L",
+        valueIncrease: "4–6%",
+        category: "Exterior",
+        tags: ["Independent House"],
+        budgetTier: "medium",
+        icon: "🌿",
+    },
+    {
+        id: 8,
+        title: "Rental Optimization Renovation",
+        description:
+            "Convert unused spaces into rentable rooms or add a self-contained unit.",
+        costRange: "₹3L – ₹8L",
+        valueIncrease: "10–15%",
+        category: "Investment",
+        tags: ["Independent House"],
+        budgetTier: "high",
+        icon: "🏠",
+    },
+    {
+        id: 9,
+        title: "Waterproofing & Seepage Fix",
+        description:
+            "Fixing seepage, leaks, and waterproofing terraces to prevent structural damage.",
+        costRange: "₹30K – ₹1L",
+        valueIncrease: "2–5%",
+        category: "Structural",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "low",
+        icon: "💧",
+    },
+    {
+        id: 10,
+        title: "Flooring Upgrade",
+        description:
+            "Replace old tiles with vitrified tiles, marble, or engineered wood flooring.",
+        costRange: "₹1L – ₹2.5L",
+        valueIncrease: "3–6%",
+        category: "Interior",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "medium",
+        icon: "🪵",
+    },
+    {
+        id: 11,
+        title: "Security System Installation",
+        description:
+            "Install CCTV, video doorbell, smart locks, and alarm systems.",
+        costRange: "₹25K – ₹70K",
+        valueIncrease: "1–3%",
+        category: "Technology",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "low",
+        icon: "🔒",
+    },
+    {
+        id: 12,
+        title: "Balcony / Terrace Renovation",
+        description:
+            "Convert unused balcony or terrace into a living/entertainment space.",
+        costRange: "₹1L – ₹3L",
+        valueIncrease: "3–5%",
+        category: "Exterior",
+        tags: ["Apartment", "Independent House"],
+        budgetTier: "medium",
+        icon: "🌇",
+    },
+];
+
+export const categories = [
+    "All",
+    "Interior",
+    "Exterior",
+    "Energy",
+    "Technology",
+    "Investment",
+    "Structural",
+];
