@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
-import { getRecommendations, getValueEstimate } from '../utils/recommendations';
+import { apiFetch } from '../utils/api';
 
 const cities = [
     'Bangalore', 'Mumbai', 'Delhi', 'Hyderabad', 'Pune',
@@ -24,6 +24,7 @@ export default function SubmitProperty() {
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [step, setStep] = useState(1);
+    const [loading, setLoading] = useState(false);
 
     const validate = () => {
         const e = {};
@@ -49,20 +50,38 @@ export default function SubmitProperty() {
         setStep(2);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const e2 = validate();
         if (Object.keys(e2).length > 0) { setErrors(e2); return; }
 
-        const recs = getRecommendations({ ...form, budget: parseFloat(form.budget) });
-        const estimate = getValueEstimate({ ...form, budget: parseFloat(form.budget) });
+        setLoading(true);
+        try {
+            // Get recommendations and value estimate from backend
+            const recData = await apiFetch('/recommendations', {
+                method: 'POST',
+                body: JSON.stringify({ ...form, budget: parseFloat(form.budget) }),
+            });
 
-        addSubmission({ ...form, squareFeet: parseFloat(form.squareFeet), budget: parseFloat(form.budget), yearsOld: parseInt(form.yearsOld) });
-        setRecommendations(recs);
-        setValueEstimate(estimate);
-        setLastFormData(form);
+            // Save submission to database via AppContext
+            await addSubmission({
+                ...form,
+                squareFeet: parseFloat(form.squareFeet),
+                budget: parseFloat(form.budget),
+                yearsOld: parseInt(form.yearsOld),
+            });
 
-        navigate('/recommendations');
+            setRecommendations(recData.recommendations);
+            setValueEstimate(recData.valueEstimate);
+            setLastFormData(form);
+
+            navigate('/recommendations');
+        } catch (error) {
+            console.error('Submission failed', error);
+            alert('Failed to get recommendations. Please try again.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     const set = (field) => (e) => setForm({ ...form, [field]: e.target.value });

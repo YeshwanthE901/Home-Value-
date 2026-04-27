@@ -1,6 +1,7 @@
 import { useApp } from '../context/AppContext';
 import StatCard from '../components/StatCard';
-import { categories } from '../data/ideas';
+
+const categories = ['All', 'Interior', 'Structural', 'Energy', 'Exterior', 'Technology', 'Investment'];
 
 export default function AdminDashboard() {
     const { ideas, submissions } = useApp();

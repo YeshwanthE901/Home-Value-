@@ -14,9 +14,7 @@ export default function Login() {
         setError('');
         setLoading(true);
 
-        await new Promise((r) => setTimeout(r, 600));
-
-        const success = login(form);
+        const success = await login(form);
         setLoading(false);
 
         if (success) {

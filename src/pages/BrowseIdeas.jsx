@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import IdeaCard from '../components/IdeaCard';
-import { categories } from '../data/ideas';
+
+const categories = ['All', 'Interior', 'Structural', 'Energy', 'Exterior', 'Technology', 'Investment'];
 
 export default function BrowseIdeas() {
     const { ideas } = useApp();

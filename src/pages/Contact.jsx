@@ -1,12 +1,26 @@
 import { useState } from 'react';
+import { apiFetch } from '../utils/api';
 
 export default function Contact() {
     const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setLoading(true);
+        try {
+            await apiFetch('/contact', {
+                method: 'POST',
+                body: JSON.stringify(form),
+            });
+            setSubmitted(true);
+        } catch (error) {
+            console.error('Failed to send message:', error);
+            alert('Failed to send message. Please try again later.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (

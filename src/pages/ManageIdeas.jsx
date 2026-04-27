@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { categories } from '../data/ideas';
+
+const categories = ['All', 'Interior', 'Structural', 'Energy', 'Exterior', 'Technology', 'Investment'];
 
 const emptyIdea = {
     title: '',
